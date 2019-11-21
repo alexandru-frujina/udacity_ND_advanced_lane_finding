@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/camera/calibration/calibration3_orig.jpg "Original image"
 [image2]: ./output_images/camera/calibration/calibration3_calibration.jpg "Calibration image"
 [image3]: ./output_images/camera/correction/calibration3_orig.jpg "Original image"
-[image4]: ./output_images/camera/correction/calibration3_calibrated.jpg" "Calibrated image"
+[image4]: ./output_images/camera/correction/calibration3_calibrated.jpg "Calibrated image"
 [image5]: ./output_images/pipeline/straight_lines1_orig.jpg "Original image"
 [image6]: ./output_images/pipeline/straight_lines1_undistorted.jpg "Undistorted image"
 [image7]: ./output_images/pipeline/straight_lines1_warp.jpg "Bird-eye view"
