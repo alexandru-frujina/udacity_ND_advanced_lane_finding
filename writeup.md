@@ -19,13 +19,20 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image1]: ../output_images/camera/calibration/calibration3_orig.jpg "Original image"
+[image2]: ../output_images/camera/calibration/calibration3_calibration.jpg "Calibration image"
+[image3]: ../output_images/camera/correction/calibration3_orig.jpg "Original image"
+[image4]: ../output_images/camera/correction/calibration3_calibrated.jpg" "Calibrated image"
+[image5]: ../output_images/pipeline/straight_lines1_orig.jpg "Original image"
+[image6]: ../output_images/pipeline/straight_lines1_undistorted.jpg "Undistorted image"
+[image7]: ../output_images/pipeline/straight_lines1_warp.jpg "Bird-eye view"
+[image8]: ../output_images/pipeline/straight_lines1_binary.jpg "Bird-eye view binary Sobel and HLS"
+[image9]: ../output_images/pipeline/straight_lines1_undistorted.jpg "Undistorted image"
+[image10]: ../output_images/pipeline/straight_lines1_warp.jpg "Warped image"
+[image11]: ../output_images/pipeline/straight_lines1_proc.jpg "Lane processing image"
+[image12]: ../output_images/pipeline/straight_lines1_output.jpg "Final output image image"
 [video1]: ./project_video.mp4 "Video"
+[video2]: ./project_video_debug_out.mp4 "Debug Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
@@ -52,16 +59,16 @@ The steps for calibration ar the following:
 2. Identify the chessboard corners in the grayscale image
 3. Add the identified points to the list of imgpoints and their associated indexes to objpoints whenever the detection was successful
 The original image can be 
-[image7]: ../output_images/camera/calibration/calibration3_orig.jpg "Original image"
+![alt text][image1]
 The identified pattern can be observed below:
-[image8]: ../output_images/camera/calibration/calibration3_calibration.jpg "Calibration image"
+![alt text][image2]
 
 * Cell 2:
 4. Apply the parameters obtained from the calibration to the original image
 The Camera calibration can be observed below:
-[image9]: ../output_images/camera/correction/calibration3_orig.jpg "Original image"
+![alt text][image3]
 The identified pattern can be observed below:
-[image10]: ../output_images/camera/correction/calibration3_calibrated.jpg" "Calibrated image"
+![alt text][image4]
 
 
 
@@ -71,9 +78,9 @@ The notebook associated with this step can be found in the "project_files/Pipeli
 #### 1. Provide an example of a distortion-corrected image.
 
 Using the calibration done in the Camera.calibrate() method the input file:
-[image11]: ../output_images/camera/correction/calibration3_orig.jpg "Original image"
+![alt text][image5]
 was corrected to:
-[image12]: ../output_images/camera/correction/calibration3_calibrated.jpg "Original image"
+![alt text][image6]
 It can be observed that the checkerboard lines are now straight.
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
@@ -89,10 +96,10 @@ The steps are the following:
 7. Finally both the binary images obtained from steps 3. and 6. are combined(overlapped) into a single binary image
 
 The input image is:
-[image13]: ../output_images/pipeline/straight_lines1_warp.jpg "Original image"
+![alt text][image7]
 
 The output imgage is:
-[image14]: ../output_images/pipeline/straight_lines1_binary.jpg "Original image"
+![alt text][image8]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -108,8 +115,8 @@ This resulted in the following source and destination points:
 | 565,  450     | 200,  100     |
 
 A sample of the conversion can be observed in the following:
-[image15]: ../output_images/pipeline/straight_lines1_undistorted.jpg "Original image"
-[image16]: ../output_images/pipeline/straight_lines1_warp.jpg "Original image"
+![alt text][image9]
+![alt text][image10]
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -119,7 +126,7 @@ Two metods are used:
 
 2. Pipeline.findLaneLinesAround() - When the lines were previously detected and approximated by a polynomial for each lane. The detection is done around the polinomial curve in this case.
 
-[image17]: ../output_images/pipeline/straight_lines1_proc.jpg "Original image"
+![alt text][image11]
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -128,8 +135,7 @@ The curvature is calculated in the Pipeline.calculateCurvature() method.
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 The last part of the processing refers to drawing the polygon overlaying the deteted road:
-[image18]: ../output_images/pipeline/straight_lines1_output.jpg "Original image"
-![alt text][image18]
+![alt text][image12]
 
 ---
 
@@ -139,7 +145,7 @@ The notebook associated with this step can be found in the "project_files/Pipeli
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 Here's a [link to my video result](./output_videos/project_video.mp4)
-Here's a [link to my video result](./output_videos/project_video.mp4)
+Here's a debug output [link to my video result](./output_videos/project_video_debug_out.mp4)
 
 ---
 
